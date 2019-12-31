@@ -80,6 +80,7 @@ function get_video_info($v){
     return $return;
 }
 
+$links = get_video_info($_GET['id']);
 echo '<div>Download Links</div><br />
 ';
 echo '<ul>
