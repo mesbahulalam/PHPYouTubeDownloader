@@ -10,6 +10,13 @@ function getpage($url){
     //return preg_replace('~[\r\n]+~', ' ', $data);
     return $data;
 }
+function format_time($t){
+    $return = str_replace('PT','',$t);
+    $return = str_replace('H',' hour, ',$return);
+    $return = str_replace('M',' minutes and ',$return);
+    $return = str_replace('S',' seconds',$return);
+    return $return;
+}
 function get_video_info($v){
     $data = getpage('https://www.youtube.com/get_video_info?video_id='.$v.'&cpn=CouQulsSRICzWn5E&eurl&el=adunit');
     parse_str($data, $data);
